@@ -1,5 +1,7 @@
 import QuantityCounter from "./QuantityCounter";
 
+//Presentation component for the cart card
+
 export default function CartCard({
   id,
   image,

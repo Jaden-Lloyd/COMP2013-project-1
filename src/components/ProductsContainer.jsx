@@ -1,5 +1,7 @@
 import ProductCard from "./ProductCard";
 
+//Presentation component for the products container
+
 export default function ProductsContainer({
   data,
   productQuantity,

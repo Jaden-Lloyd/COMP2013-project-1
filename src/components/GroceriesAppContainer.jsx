@@ -3,6 +3,8 @@ import ProductsContainer from "./ProductsContainer";
 import CartContainer from "./CartContainer";
 import NavBar from "./NavBar";
 
+//Primary logic component
+
 export default function GroceriesAppContainer({ data }) {
   const [productQuantity, setProductQuantity] = useState(
     data.map((prod) => {
@@ -17,9 +19,7 @@ export default function GroceriesAppContainer({ data }) {
   //new state for the cart that starts as an empty array
   const [cart, setCart] = useState([]);
 
-  //this function will handle the add to quantity button on click event
-  //when the user clicks the add button, the quantity will add one to the quantity
-  //property in the state of the card that has the same id
+  //This function adds quantity to cart or product cards
   const handleAddQuantity = (productId, mode) => {
     if (mode === "product") {
       const newProductQuantity = productQuantity.map((prod) => {
@@ -43,6 +43,7 @@ export default function GroceriesAppContainer({ data }) {
     }
   };
 
+  //This function removes quantity from cart or product cards
   const handleRemoveQuantity = (productId, mode) => {
     if (mode === "product") {
       const newProductQuantity = productQuantity.map((prod) => {
@@ -66,9 +67,7 @@ export default function GroceriesAppContainer({ data }) {
     }
   };
 
-  //This function will handle adding a product to a cart
-  //Each addition will take the product, quantity, and total
-
+  //This fuction handles adding products to the cart
   const handleAddToCart = (productToAdd) => {
     const currentProduct = data.find((prod) => prod.id === productToAdd.id);
     const productInCart = cart.find((item) => item.id === productToAdd.id);
@@ -104,10 +103,12 @@ export default function GroceriesAppContainer({ data }) {
     setCart(filteredCart);
   };
 
+  //This function will empty the whole cart
   const handleEmptyCart = () => {
     setCart([]);
   };
 
+  //Gets price of all items in the cart
   let totalPrice = 0;
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price * cart[i].quantity;

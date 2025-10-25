@@ -1,6 +1,8 @@
 import cartEmpty from "../assets/cart-empty.png";
 import cartFull from "../assets/cart-full.png";
 
+//Presentation component for the nav bar
+
 export default function NavBar({ username, totalPrice }) {
   return (
     <div className="NavBar">

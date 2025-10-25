@@ -1,5 +1,7 @@
 import CartCard from "./CartCard";
 
+//Presentation component for the cart container
+
 export default function CartContainer({
   cart,
   image,

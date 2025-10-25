@@ -1,5 +1,7 @@
 import QuantityCounter from "./QuantityCounter";
 
+//Presentation component for the quantity counter
+
 export default function ProductCard({
   productQuantity,
   image,
